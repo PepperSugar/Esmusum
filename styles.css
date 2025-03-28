@@ -441,51 +441,59 @@ header, .gallery {
 
 .random-memories-container {
     display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
     justify-content: center;
-    gap: 2rem;
     margin-top: 2rem;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.5s ease;
+    padding: 1rem;
+    max-width: 100%;
 }
 
-.random-memories-container.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.random-memory-item {
+.random-memories-container img {
     width: 200px;
     height: 200px;
-    border-radius: 15px;
-    overflow: hidden;
-    position: relative;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transform: scale(0);
-    transition: transform 0.5s ease;
-}
-
-.random-memory-item.visible {
-    transform: scale(1);
-}
-
-.random-memory-item img {
-    width: 100%;
-    height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease forwards;
 }
 
-.random-memory-item:hover img {
-    transform: scale(1.1);
+.random-memories-container img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-@keyframes sparkle {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
+@media (max-width: 768px) {
+    .random-memories-container {
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    .random-memories-container img {
+        width: calc(50% - 0.5rem);
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .random-memories-container img {
+        width: calc(100% - 0.5rem);
+        height: 200px;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .random-memories-btn.sparkle {
