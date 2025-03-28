@@ -138,28 +138,6 @@ h2 {
     .container {
         padding: 1rem;
     }
-
-    .music-player {
-        bottom: 1rem;
-        right: 4rem;
-    }
-    
-    .music-toggle {
-        width: 40px;
-        height: 40px;
-    }
-    
-    .music-toggle i {
-        font-size: 1.2rem;
-    }
-
-    .animation-toggle {
-        bottom: 1rem;
-        right: 1rem;
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-    }
 }
 
 /* Animation for content */
@@ -185,8 +163,9 @@ header, .gallery {
 
 /* Music Player styles */
 .music-player {
-    position: relative;
+    position: static;
     z-index: 9999;
+    margin: 0;
 }
 
 .music-toggle {
@@ -202,6 +181,8 @@ header, .gallery {
     justify-content: center;
     transition: all 0.3s ease;
     backdrop-filter: blur(5px);
+    margin: 0;
+    position: static;
 }
 
 .music-toggle:hover {
@@ -466,13 +447,15 @@ header, .gallery {
 .random-memories-container img {
     width: 200px;
     height: 200px;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 0.5s ease forwards;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
 }
 
 .random-memories-container img:hover {
@@ -571,6 +554,8 @@ header, .gallery {
     font-size: 1.5rem;
     backdrop-filter: blur(5px);
     transition: all 0.3s ease;
+    margin: 0;
+    position: static;
 }
 
 .animation-toggle:hover {
