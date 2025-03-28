@@ -163,7 +163,7 @@ header, .gallery {
 
 /* Music Player styles */
 .music-player {
-    position: static;
+    position: relative;
     z-index: 9999;
     margin: 0;
 }
@@ -182,7 +182,7 @@ header, .gallery {
     transition: all 0.3s ease;
     backdrop-filter: blur(5px);
     margin: 0;
-    position: static;
+    position: relative;
 }
 
 .music-toggle:hover {
@@ -555,7 +555,7 @@ header, .gallery {
     backdrop-filter: blur(5px);
     transition: all 0.3s ease;
     margin: 0;
-    position: static;
+    position: relative;
 }
 
 .animation-toggle:hover {
@@ -723,15 +723,15 @@ header, .gallery {
     }
 }
 
-/* Remove any conflicting styles */
+/* Remove conflicting styles */
 .music-player {
-    position: static;
+    position: relative;
     bottom: auto;
     right: auto;
 }
 
 .animation-toggle {
-    position: static;
+    position: relative;
     bottom: auto;
     right: auto;
 } 
