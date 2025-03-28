@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yıldönümümüz</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="constellation-map">
+        <canvas id="starCanvas"></canvas>
+        <div class="star-info">
+            <h3 id="starName"></h3>
+            <p id="constellationName"></p>
+        </div>
+    </div>
+    <div class="floating-hearts">
+        <div class="heart heart-1"></div>
+        <div class="heart heart-2"></div>
+        <div class="heart heart-3"></div>
+        <div class="heart heart-4"></div>
+        <div class="heart heart-5"></div>
+    </div>
+    <div class="container">
+        <header>
+            <h1>Esmuşumla Geçen Zamanım</h1>
+            <div class="timer">
+                <div class="timer-item">
+                    <span id="days">0</span>
+                    <span>Gün</span>
+                </div>
+                <div class="timer-item">
+                    <span id="hours">0</span>
+                    <span>Saat</span>
+                </div>
+                <div class="timer-item">
+                    <span id="minutes">0</span>
+                    <span>Dakika</span>
+                </div>
+            </div>
+            <div class="love-reasons">
+                <h2>Seni Neden Seviyorum?</h2>
+                <div class="reason-container">
+                    <p id="currentReason" class="reason-text"></p>
+                </div>
+            </div>
+            <button id="randomMemories" class="random-memories-btn">
+                <i class="fas fa-magic"></i> Rastgele Anılarımız
+            </button>
+            <div id="randomMemoriesContainer" class="random-memories-container">
+                <!-- Random images will be displayed here -->
+            </div>
+        </header>
+    </div>
+
+    <div class="controls-container">
+        <div class="music-player">
+            <audio id="bgMusic" loop>
+                <source src="audio/romantic-song.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <button id="musicToggle" class="music-toggle">
+                <i class="fas fa-volume-up"></i>
+            </button>
+        </div>
+        <button id="animationToggle" class="animation-toggle">
+            <i class="fas fa-magic"></i>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="constellation.js"></script>
+    <script src="animations.js"></script>
+</body>
+</html> 
